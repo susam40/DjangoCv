@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="tr">
+	{% include 'include/head.html' %}
+    
+    <body>
+        {% include 'include/navbar.html' %}
+                
+         {% block home_banner_area %}
+                        
+        {% endblock  %}
+                           
+       {% block content %} 
+       {% endblock  %}
+        
+        {% include 'include/footer.html' %}
+
+        {% block extra_scripts %}  
+        {% endblock  %}
+            
+        
+    </body>
+</html>

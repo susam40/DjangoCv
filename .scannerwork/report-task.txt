@@ -1,0 +1,6 @@
+projectKey=DjangoCv
+serverUrl=http://localhost:9000
+serverVersion=8.9.10.61524
+dashboardUrl=http://localhost:9000/dashboard?id=DjangoCv
+ceTaskId=AYxF0JMaxD6uJSR78pxP
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYxF0JMaxD6uJSR78pxP
