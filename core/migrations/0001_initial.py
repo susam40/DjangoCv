@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('description', models.CharField(blank=True, default='', max_length=254)),
                 ('parameter', models.CharField(blank=True, default='', max_length=254)),
                 ('updated_date', models.DateTimeField(auto_now=True)),
-                ('creted_date', models.DateField(auto_now_add=True)),
+                ('created_date', models.DateField(auto_now_add=True)),
             ],
         ),
     ]

@@ -1,10 +1,12 @@
 from django.db import models
 
-class GeneralSettings(models.Model):
+class GeneralSetting(models.Model):
     name = models.CharField(
         default='',
         max_length=254,
         blank=True, 
+        verbose_name='Name Test',
+        help_text='Ayar İsmi'
     )
     
     description = models.CharField(
@@ -21,9 +23,16 @@ class GeneralSettings(models.Model):
         blank=True,
         auto_now=True,
     )
-    creted_date=models.DateField(
+    created_date=models.DateField(
         blank=True,
         auto_now_add=True,
     )
+    def __str__(self):
+        return 'General Setting:'+self.name
+    
+    class Meta:
+        verbose_name = 'General Setting'
+        verbose_name_plural = 'General Settings'
+        ordering = ('name', )
     
 
