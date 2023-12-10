@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-from contact.views import contact_form
+from contact.views import contact_form,contact
 
 urlpatterns = [
     path('contact_form', contact_form, name='contact_form'),
+    path('contact', contact, name='contact'),
 ]
