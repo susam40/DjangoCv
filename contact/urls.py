@@ -6,3 +6,4 @@ urlpatterns = [
     path('contact_form', contact_form, name='contact_form'),
     path('contact', contact, name='contact'),
 ]
+    

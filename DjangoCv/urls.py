@@ -24,3 +24,6 @@ urlpatterns = [
     path('',include('core.urls')),
     path('contact/',include('contact.urls')),
 ]
+#admin panelde resim eklenecek bişi olursa burası duracak 
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
