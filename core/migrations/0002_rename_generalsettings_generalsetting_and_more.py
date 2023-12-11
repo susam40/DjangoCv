@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
         ),
         migrations.RenameField(
             model_name='generalsetting',
-            old_name='creted_date',
+            old_name='created_date',
             new_name='created_date',
         ),
     ]
