@@ -1,6 +1,22 @@
 from django.db import models
 
-class GeneralSetting(models.Model):
+class AbstractModel(models.Model):
+    
+    updated_date=models.DateTimeField(
+        blank=True,
+        auto_now=True,
+    )
+    created_date=models.DateField(
+        blank=True,
+        auto_now_add=True,
+    )
+    
+    class Meta:
+        abstract = True #database tablosu oluşturmaz.
+    
+
+
+class GeneralSetting(AbstractModel):
     name = models.CharField(
         default='',
         max_length=254,
@@ -19,14 +35,7 @@ class GeneralSetting(models.Model):
         max_length=254,
         blank=True,
     )
-    updated_date=models.DateTimeField(
-        blank=True,
-        auto_now=True,
-    )
-    created_date=models.DateField(
-        blank=True,
-        auto_now_add=True,
-    )
+   
     def __str__(self):
         return 'General Setting:'+self.name
     
@@ -35,7 +44,7 @@ class GeneralSetting(models.Model):
         verbose_name_plural = 'General Settings'
         ordering = ('name', )
         
-class ImageSetting(models.Model):
+class ImageSetting(AbstractModel):
         name = models.CharField(
         default='',
         max_length=254,
@@ -56,16 +65,6 @@ class ImageSetting(models.Model):
             upload_to='images/',
         )
         
-        updated_date=models.DateTimeField(
-        blank=True,
-        auto_now=True,
-        )
-        
-        created_date=models.DateTimeField(
-        blank=True,
-        auto_now_add=True,
-        
-        )
         
         def __str__(self):
             return 'Image Setting:'+self.name
