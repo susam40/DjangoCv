@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from core.models import GeneralSetting , ImageSetting, Skill, Experience
+from core.models import GeneralSetting , ImageSetting, Skill, Experience,Education
 
 
 def index(request):
@@ -20,6 +20,7 @@ def index(request):
     #Skills
     skills = Skill.objects.all().order_by('order'); #ordere göre sıralar
     experiences = Experience.objects.all().order_by('-start_date')
+    educations = Education.objects.all().order_by('-start_date')
     
     context = {
         'site_title': site_title,
@@ -35,6 +36,7 @@ def index(request):
         'site_favicon' : site_favicon,
         'skills' : skills,
         'experiences' : experiences,
+        'educations' : educations,
         
         
     }
