@@ -44,3 +44,12 @@ class EducationAdmin(admin.ModelAdmin):
     class Meta:
         model = Education
 
+@admin.register(SocialMedia) 
+class SocialMediaAdmin(admin.ModelAdmin):
+    list_display = ['id', 'order', 'link', 'icon', 'updated_date','created_date']
+    list_editable = ['link', 'icon']
+    search_fields = ['order', 'link', 'icon']
+
+    class Meta:
+        model = SocialMedia
+
